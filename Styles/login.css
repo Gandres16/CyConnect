@@ -1,0 +1,26 @@
+html * {
+    font-family: Helvetica, sans-serif;
+}
+
+.center {
+    margin: auto;
+}
+
+.centertext {
+    text-align: center;
+}
+
+.inputbox {
+    border-radius: 5px;
+    background: transparent;
+    border: 2px;
+    outline: none;
+}
+
+.loginbox {
+    margin-top: 10%;
+    width: 30%;
+    border-radius: 25px;
+    background: #d95b5b;
+    padding: 10px;  
+}
