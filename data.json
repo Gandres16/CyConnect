@@ -1,0 +1,19 @@
+{
+    "about": [
+    {
+        "title": "Jacob Frencher",
+        "subtitle": "Co-Founder",
+        "description": "Computer Science student at ISU",
+        "img": "Images/jacob.jpeg"
+    },
+    {
+        "img": "Images/Gemini_Generated_Image.jpg"
+    },
+    {
+        "title": "Andres Gonzalez",
+        "subtitle": "Co-Founder",
+        "description": "Computer Science student at ISU",
+        "img": "Images/andres"
+    }
+    ]
+}
