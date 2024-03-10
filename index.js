@@ -69,10 +69,15 @@ function createCard(us) {
     const cardBody = document.createElement("div");
     cardBody.className = "card-body";
 
-    const title = document.createElement("h5");
+    const title = document.createElement("h3");
     title.className = "card-title";
-    title.textContent = us.title || 'No Title';
+    title.textContent = us.title || '';
     cardBody.appendChild(title);
+
+    const subtitle = document.createElement("h5");
+    subtitle.className = "card-subtitle";
+    subtitle.textContent = us.subtitle || '';
+    cardBody.appendChild(subtitle);
 
     const desc = document.createElement("p");
     desc.className = "card-text";
