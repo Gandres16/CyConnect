@@ -15,5 +15,25 @@
         "description": "Computer Science student at ISU",
         "img": "Images/andres.png"
     }
+    ],
+    "posts": [
+    {
+        "username": "fakeuser3",
+        "caption": "This is the first fake user post for our midterm website",
+        "img":"Images/post3.jpg",
+        "time": "5 minutes ago"
+    },
+    {
+        "username": "fakeuser2",
+        "caption": "This is the second fake user post for our midterm website",
+        "img":"Images/post2.jpg",
+        "time": "20 minutes ago"
+    },
+    {
+        "username": "fakeuser1",
+        "caption": "This is the first fake user post for our midterm website",
+        "img":"Images/post1.jpg",
+        "time": "30 minutes ago"
+    }
     ]
 }

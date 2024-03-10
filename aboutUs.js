@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
-    loadIndex();
+    loadAbout();
 });
 
-function loadIndex() {
+function loadAbout() {
     fetch("./data.json")
     .then(response => {
         if (!response.ok) {
@@ -11,31 +11,27 @@ function loadIndex() {
         return response.json();
     })
     .then(data => {
-        displayPosts(data.posts);
+        displayUs(data.about);
     })
     .catch(error => {
         console.error("There has been a problem with your fetch operation:", error);
     });
 }
 
-function displayPosts(posts) {
-    const flashSalesContainer = document.getElementById("postsContainer");
+function displayUs(us) {
+    const flashSalesContainer = document.getElementById("aboutContainer");
     if (!flashSalesContainer) {
-        console.error("posts container element not found in the DOM.");
+        console.error("About us container element not found in the DOM.");
         return;
     }
     flashSalesContainer.innerHTML = '';
 
     let row = createRow();
 
-    posts.forEach((post, index) => {
-        if (index > 0 && index % 1 === 0) {
-            flashSalesContainer.appendChild(row);
-            row = createRow();
-        }
+    us.forEach((person, index) => {
 
         const col = createColumn();
-        const card = createCard(post);
+        const card = createCard(person);
 
         col.appendChild(card);
         row.appendChild(col); 
@@ -54,19 +50,19 @@ function createRow() {
 
 function createColumn() {
     const col = document.createElement("div");
-    col.className = "col";
+    col.className = "col-4";
     return col;
 }
 
-function createCard(post) {
+function createCard(us) {
     const card = document.createElement("div");
     card.className = "card h-100";
 
-    if (post.img) {
+    if (us.img) {
         const img = document.createElement("img");
         img.className = "card-img-top";
-        img.src = post.img;
-        img.alt = post.title || 'Post Image';
+        img.src = us.img;
+        img.alt = us.title || 'Person Image';
         card.appendChild(img);
     }
 
@@ -75,18 +71,25 @@ function createCard(post) {
 
     const title = document.createElement("h3");
     title.className = "card-title";
-    title.textContent = post.username || '';
+    title.textContent = us.title || '';
     cardBody.appendChild(title);
 
     const subtitle = document.createElement("h5");
     subtitle.className = "card-subtitle";
-    subtitle.textContent = post.caption || '';
+    subtitle.textContent = us.subtitle || '';
     cardBody.appendChild(subtitle);
 
-    const time = document.createElement("p");
-    time.className = "card-text";
-    time.textContent = post.time || '';
-    cardBody.appendChild(time);
+    const desc = document.createElement("p");
+    desc.className = "card-text";
+    desc.textContent = us.description;
+    cardBody.appendChild(desc);
+
+    // if (us.price) {
+    //     const price = document.createElement("p");
+    //     price.className = "card-text";
+    //     price.textContent = '';
+    //     cardBody.appendChild(price);
+    // }
 
     card.appendChild(cardBody);
 
